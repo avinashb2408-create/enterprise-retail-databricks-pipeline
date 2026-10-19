@@ -26,8 +26,10 @@ or address change keeps its history. Data quality rules run before Silver;
 rows that fail a critical rule go to a quarantine table with the rule name
 attached instead of being dropped silently.
 
-The code runs locally on PySpark + Delta and the notebooks run unchanged
-on Databricks - only the paths in the config file change. I documented
+The code is written to run locally on PySpark + Delta and the notebooks
+run unchanged on Databricks - only the paths in the config file change.
+(Full Spark run-through is in progress; the repo's execution report
+tracks what's verified so far.) I documented
 the trade-offs, including where I decided not to use SCD2 and why
 Z-ORDER stayed off, in docs/decisions.md in the repo.
 

@@ -6,7 +6,7 @@ Watermark: only rows with updated_at after the stored max are even read.
 from delta.tables import DeltaTable
 from src.utils.config import load_config, table_path
 
-def watermark(spark, path: str, col: str = "updated_at"):
+def get_watermark(spark, path: str, col: str = "updated_at"):
     try: return spark.read.format("delta").load(path).agg({col:"max"}).collect()[0][0]
     except Exception: return None  # first run, table doesn't exist yet
 

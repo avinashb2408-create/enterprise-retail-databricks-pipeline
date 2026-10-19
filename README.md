@@ -1,5 +1,7 @@
 # Enterprise Retail Data Engineering Pipeline Using Azure Databricks, Python, PySpark, SQL, and Delta Lake
 
+Built by Avinash B — Senior Data Engineer, Richmond, VA · [LinkedIn](https://www.linkedin.com/in/avinash-b-databricks-architect)
+
 I built this to have one public project that shows how I actually structure
 a data pipeline, end to end: ingest messy source files, clean them in a
 separate layer, model a few Gold tables properly, and write down the
@@ -71,7 +73,7 @@ src/utils/             config, Spark session, logging
 sql/                   SQL versions of the main transforms + reporting queries
 notebooks/             Databricks-format .py notebooks, 01-04
 tests/                 pytest - no Spark needed for most of it
-docs/                  architecture, data model, decisions, execution report
+docs/                  architecture, data model, decisions, my working notes, execution report
 data/sample/           generated sample files (regenerate any time)
 config/                pipeline_config.yaml - paths, tables, watermark
 ```
@@ -94,4 +96,5 @@ not claiming a run that hasn't happened.
 
 Avinash B - Senior Data Engineer, Richmond, VA.
 Databricks, PySpark, Azure, AWS, Snowflake.
+GitHub: https://github.com/avinashb2408-create
 LinkedIn: https://www.linkedin.com/in/avinash-b-databricks-architect

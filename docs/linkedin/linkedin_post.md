@@ -31,9 +31,11 @@ that point it couldn't.
 Code, notebooks, SQL, tests, and the reasoning behind the trade-offs
 are here: https://github.com/avinashb2408-create/enterprise-retail-databricks-pipeline
 
-I run it locally on PySpark + Delta; the same notebooks and modules run
-on Azure Databricks with only the config paths changed. Happy to hear
-how others handle SCD scope or incremental Gold tables.
+The code is written to run locally on PySpark + Delta, and the same
+notebooks and modules run on Azure Databricks with only the config
+paths changed - I'm finishing the full Spark run-through now and will
+update the repo's execution report with the output once it's done.
+Happy to hear how others handle SCD scope or incremental Gold tables.
 
 - Avinash B, Senior Data Engineer (Databricks / PySpark / Azure), Richmond, VA
 

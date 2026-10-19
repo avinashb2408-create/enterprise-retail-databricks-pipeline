@@ -21,7 +21,8 @@ def clean_customers(df):
               .withColumn("email", F.when(F.col("email") == "", None).otherwise(F.col("email")))
               .withColumn("first_name", F.initcap(F.trim("first_name"))))
 
-def clean_generic(df, key: str):
+def dedupe_only(df, key: str):
+    # fallback for tables with no real cleaning rules yet - just dedupe
     return dedupe(df, [key])
 
 CLEANERS = {"orders": clean_orders, "customers": clean_customers}
@@ -31,7 +32,7 @@ def main():
     keys = {"products":"product_id","order_items":"order_item_id","inventory":"product_id"}
     for t in cfg["tables"]["silver"]:
         df = spark.read.format("delta").load(table_path(cfg, "bronze", t))
-        out = CLEANERS.get(t, lambda d: clean_generic(d, keys.get(t, "product_id")))(df)
+        out = CLEANERS.get(t, lambda d: dedupe_only(d, keys.get(t, "product_id")))(df)
         out.write.format("delta").mode("overwrite").option("overwriteSchema","true").save(table_path(cfg, "silver", t))
 
 if __name__ == "__main__": main()

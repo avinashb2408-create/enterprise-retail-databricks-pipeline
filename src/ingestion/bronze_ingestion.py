@@ -6,7 +6,7 @@ Silver can't audit later. Only additions: _ingested_at and _source_file.
 from pathlib import Path
 from src.utils.config import load_config, table_path
 from src.utils.spark_session import get_spark
-from src.utils.logging_setup import get_logger
+from src.utils.log import get_logger
 
 log = get_logger(__name__)
 FORMATS = {"customers":"csv","products":"csv","suppliers":"csv","stores":"csv","order_items":"csv","orders":"json","inventory":"parquet"}

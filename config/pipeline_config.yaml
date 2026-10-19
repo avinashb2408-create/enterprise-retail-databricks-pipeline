@@ -2,6 +2,7 @@
 # a DBFS or Unity Catalog volume and leave the table names alone.
 pipeline:
   name: retail-medallion
+  owner: Avinash B
   env: local
   watermark_column: updated_at
 
