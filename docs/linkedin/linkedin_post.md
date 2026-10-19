@@ -29,7 +29,7 @@ looked off, I wanted Bronze to tell me exactly what had arrived - and at
 that point it couldn't.
 
 Code, notebooks, SQL, tests, and the reasoning behind the trade-offs
-are here: [GitHub URL after repo creation]
+are here: https://github.com/avinashb2408-create/enterprise-retail-databricks-pipeline
 
 I run it locally on PySpark + Delta; the same notebooks and modules run
 on Azure Databricks with only the config paths changed. Happy to hear

@@ -4,7 +4,7 @@
 Enterprise Retail Data Engineering Pipeline - Azure Databricks, PySpark, Delta Lake
 
 **Project URL**
-[GitHub URL after repo creation]
+https://github.com/avinashb2408-create/enterprise-retail-databricks-pipeline
 
 **Associated with**
 Independent / personal project (not an employer project)
