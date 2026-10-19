@@ -1,0 +1,9 @@
+supplier_id,supplier_name,country,lead_time_days
+1,Supplier A Trading Co,MX,5
+2,Supplier B Trading Co,DE,4
+3,Supplier C Trading Co,MX,13
+4,Supplier D Trading Co,DE,11
+5,Supplier E Trading Co,US,5
+6,Supplier F Trading Co,IN,21
+7,Supplier G Trading Co,DE,3
+8,Supplier H Trading Co,CN,21

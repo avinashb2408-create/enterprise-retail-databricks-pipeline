@@ -1,0 +1,9 @@
+flowchart TD
+  S[generate_retail_data.py<br/>seed 42] --> L[Land files in data/sample]
+  L --> I[01 Bronze ingestion<br/>append-only Delta]
+  I --> DQ{Data quality checks<br/>critical rules}
+  DQ -- fail --> Q[Quarantine table<br/>with failed rule names]
+  DQ -- pass --> T[02 Silver transformations<br/>dedupe, dates, types]
+  T --> M[Incremental MERGE<br/>orders, updated_at watermark]
+  M --> G[03 Gold + SCD2 MERGE<br/>customer / product history]
+  G --> R[04 SQL reporting queries]

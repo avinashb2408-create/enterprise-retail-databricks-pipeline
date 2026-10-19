@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset='utf-8'><title>medallion_architecture</title>
+<script src='https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js'></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+<style>body{font-family:Arial,sans-serif;margin:40px} .mermaid{background:#fff}</style></head>
+<body><h2>Medallion Architecture</h2><pre class='mermaid'>flowchart LR
+  A[CSV: customers, products, suppliers, stores] --> B[Bronze - Delta<br/>as landed + ingest columns]
+  C[JSON lines: orders] --> B
+  D[Parquet: inventory] --> B
+  B --> E[Silver - Delta<br/>cleaned, deduped, typed<br/>bad rows to quarantine]
+  E --> F[Gold - Delta<br/>fact_sales, dim_customer SCD2,<br/>dim_product SCD2, sales_by_category_month,<br/>inventory_risk, customer_segments]
+  F --> G[SQL reporting / BI]
+  E -. failures .-> Q[(Quarantine - Delta)]
+</pre>
+<p>Screenshot this page for LinkedIn. Source: medallion_architecture.mmd</p></body></html>

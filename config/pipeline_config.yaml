@@ -1,0 +1,36 @@
+# Local paths by default. On Databricks, point data_root / warehouse_root at
+# a DBFS or Unity Catalog volume and leave the table names alone.
+pipeline:
+  name: retail-medallion
+  env: local
+  watermark_column: updated_at
+
+paths:
+  data_root: data/sample
+  bronze: data/warehouse/bronze
+  silver: data/warehouse/silver
+  gold: data/warehouse/gold
+  quarantine: data/warehouse/quarantine
+  checkpoint: data/warehouse/_checkpoints
+
+tables:
+  bronze: [customers, products, orders, order_items, inventory, suppliers, stores]
+  silver: [customers, products, orders, order_items, inventory]
+  gold:
+    - dim_customer
+    - dim_product
+    - fact_sales
+    - sales_by_category_month
+    - top_products
+    - inventory_risk
+    - customer_segments
+
+quality:
+  fail_on_critical: true
+  max_null_rate_email: 0.05
+
+generation:
+  seed: 42
+  customers: 200
+  products: 60
+  orders: 500

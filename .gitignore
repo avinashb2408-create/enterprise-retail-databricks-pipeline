@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+data/warehouse/
+data/sample/*.parquet.bak
+*.crc
+spark-warehouse/
+metastore_db/
+derby.log
+.ipynb_checkpoints/
+.DS_Store

@@ -1,0 +1,8 @@
+flowchart LR
+  A[CSV: customers, products, suppliers, stores] --> B[Bronze - Delta<br/>as landed + ingest columns]
+  C[JSON lines: orders] --> B
+  D[Parquet: inventory] --> B
+  B --> E[Silver - Delta<br/>cleaned, deduped, typed<br/>bad rows to quarantine]
+  E --> F[Gold - Delta<br/>fact_sales, dim_customer SCD2,<br/>dim_product SCD2, sales_by_category_month,<br/>inventory_risk, customer_segments]
+  F --> G[SQL reporting / BI]
+  E -. failures .-> Q[(Quarantine - Delta)]
