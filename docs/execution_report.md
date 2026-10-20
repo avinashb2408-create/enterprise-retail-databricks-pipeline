@@ -38,8 +38,11 @@ present, generated files existing, and the data quality rule functions.
   Gold output exists yet. The SQL timings / row counts for Gold are
   therefore not shown anywhere in this repo.
 - Anything on Azure Databricks or Databricks Community Edition.
-- GitHub: no account or repository created yet, nothing published.
-- LinkedIn: drafts only, nothing posted.
+
+## Published
+- GitHub: repository created and public since 2026-10-19 —
+  https://github.com/avinashb2408-create/enterprise-retail-databricks-pipeline
+- LinkedIn: project added to profile and launch post published 2026-10-19.
 
 ## To reproduce the Spark run
 Install JDK 17, `pip install -r requirements.txt`, then follow
